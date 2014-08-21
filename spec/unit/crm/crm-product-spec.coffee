@@ -49,6 +49,7 @@ describe 'crm', ->
       expect(Crm.getBaseUrl().query).toEqual({
         authtoken: zoho.authToken
         scope: 'crmapi'
+        version: 2
       })
 
     it 'has path with name', ->

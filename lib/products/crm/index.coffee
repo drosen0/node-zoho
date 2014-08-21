@@ -29,6 +29,7 @@ class CrmProduct extends BaseProduct
       query: {
         authtoken: @zoho.authToken
         scope: @getScope()
+        version: 2
       }
       path: [ @name ]
     }

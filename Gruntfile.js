@@ -50,6 +50,20 @@ module.exports = function(grunt) {
       push: false,
       // pushTo: 'origin',
       gitDescribeOptions: '--tags --always --abbrev=1 --dirty=-d'
+    },
+    coffee: {
+      compile: {
+        options: {
+          bare: true
+        },
+        files: [{
+          expand: true,
+          cwd: 'lib',
+          src: ['**/*.coffee'],
+          dest: 'build/',
+          ext: '.js'
+        }]
+      }
     }
   });
 
@@ -57,8 +71,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-jasmine-bundle');
   grunt.loadNpmTasks('grunt-bump');
+  grunt.loadNpmTasks('grunt-contrib-coffee');
 
-  grunt.registerTask('default', ['coffeelint', 'spec:unit'] );
+  grunt.registerTask('default', ['coffeelint', 'spec:unit', 'coffee:compile'] );
   grunt.registerTask('integration', ['coffeelint', 'spec:integration']);
   grunt.registerTask('travis-ci', ['coffeelint', 'spec:unit'] );
   grunt.registerTask('release', ['bump_version','do_release'] );

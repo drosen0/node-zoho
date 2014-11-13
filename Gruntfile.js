@@ -76,5 +76,5 @@ module.exports = function(grunt) {
   grunt.registerTask('default', ['coffeelint', 'spec:unit', 'coffee:compile'] );
   grunt.registerTask('integration', ['coffeelint', 'spec:integration']);
   grunt.registerTask('travis-ci', ['coffeelint', 'spec:unit'] );
-  grunt.registerTask('release', ['bump_version','do_release'] );
+  grunt.registerTask('release', ['bump'] );
 };

@@ -1,23 +1,25 @@
 {
   "name": "node-zoho",
-  "version": "0.0.13",
+  "version": "0.0.17",
   "description": "Simple Zoho integrations for Node.js",
   "keywords": [
     "zoho"
   ],
   "main": "build/node-zoho",
   "private": false,
-  "homepage": "https://github.com/picatic/node-zoho",
-  "bugs": "https://github.com/picatic/node-zoho/issues",
+  "homepage": "https://github.com/ahmader/node-zoho",
+  "bugs": "https://github.com/ahmader/node-zoho/issues",
   "license": "MIT",
-  "author": "Picatic E-Tickets Inc. <api@picatic.com>",
-  "contributors": [],
+  "author": "Ahmader <ahmader@amozun.com>",
+  "contributors": [
+    "Picatic E-Tickets Inc. <api@picatic.com>"
+  ],
   "engines": {
     "node": ">=0.10.0"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/picatic/node-zoho.git"
+    "url": "git://github.com/ahmader/node-zoho.git"
   },
   "dependencies": {
     "async": "^0.9.0",

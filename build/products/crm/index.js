@@ -14,7 +14,7 @@ CrmProduct = (function(_super) {
   CrmProduct.prototype.name = 'crm';
 
   CrmProduct.prototype.getModules = function() {
-    return ['Leads', 'Events'];
+    return ['Leads', 'Events', 'Potentials'];
   };
 
   CrmProduct.prototype.getModule = function(module_name) {

@@ -23,10 +23,6 @@ Leads = (function(_super) {
     throw new Error('Not Implemented');
   };
 
-  Leads.prototype.getSearchRecords = function() {
-    throw new Error('Not Implemented');
-  };
-
   Leads.prototype.getSearchRecordsByPDC = function() {
     throw new Error('Not Implemented');
   };

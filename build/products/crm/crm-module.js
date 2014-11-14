@@ -271,6 +271,49 @@ CrmModule = (function(_super) {
     })(this));
   };
 
+  CrmModule.prototype.getSearchRecords = function(_query, cb) {
+    var options, query, request, url;
+    if (!_.isObject(_query)) {
+      throw new Error('Requires a query object');
+    }
+    query = _.extend({
+      newFormat: 1,
+      selectColumns: 'All'
+    }, _query);
+    if (!query.searchCondition) {
+      throw new Error('Requires a searchCondition to fetch');
+    }
+    options = {
+      method: 'GET'
+    };
+    url = this.buildUrl(query, ['getSearchRecords'], options);
+    request = new Request(this, url);
+    return request.request((function(_this) {
+      return function(err, response) {
+        var processed, row, _data;
+        if (err) {
+          if (_.isFunction(cb)) {
+            return cb(err, null);
+          }
+        } else {
+          _data = response.data;
+          response.data = Array();
+          if (_data != null ? _data[_this.name] : void 0) {
+            for (row in _data[_this.name][0].row) {
+              processed = _this.processRecord(_data[_this.name][0].row[row]);
+              if (processed) {
+                response.data.push(processed);
+              }
+            }
+          }
+          if (_.isFunction(cb)) {
+            return cb(null, response);
+          }
+        }
+      };
+    })(this));
+  };
+
   CrmModule.prototype.insertRecords = function(records, cb) {
     var options, query, request, url;
     if (!_.isArray(records)) {

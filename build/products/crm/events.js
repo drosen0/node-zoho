@@ -23,10 +23,6 @@ Events = (function(_super) {
     throw new Error('Not Implemented');
   };
 
-  Events.prototype.getSearchRecords = function() {
-    throw new Error('Not Implemented');
-  };
-
   Events.prototype.getSearchRecordsByPDC = function() {
     throw new Error('Not Implemented');
   };

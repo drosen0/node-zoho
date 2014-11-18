@@ -111,7 +111,7 @@ CrmModule = (function(_super) {
         record = record.success;
         for (k in record) {
           v = record[k];
-          if (k === 'Contact' || k === 'Potential') {
+          if (k === 'Account' || k === 'Contact' || k === 'Potential') {
             result[k] = {};
             _.each(v, (function(_this) {
               return function(_v) {

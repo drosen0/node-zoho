@@ -73,7 +73,7 @@ class CrmModule extends BaseModule
       else if _.has(record,'success')
         record = record.success
         for k,v of record
-          if k is 'Contact' or k is 'Potential'
+          if k is 'Account' or k is 'Contact' or k is 'Potential'
             result[k] = {}
             _.each(v, (_v) =>
               _.extend(result[k],@processRecord(_v))
